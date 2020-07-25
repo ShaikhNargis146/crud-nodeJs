@@ -46,14 +46,26 @@ response: {
 API 3-POST : http://localhost:8800/api/v1/device/edit 
 
 request body:{name:"AC",device_code:"AC001",model:"IFB"}
-request:
+response:response:{
+    "status": 200,
+    "message": "OK",
+    "data": {
+        "id": 1,
+        "name": "AC",
+        "device_code": "003",
+        "model": "IFB",
+        "status": "OFF",
+        "isactive": true,
+        "created_at": "2020-07-25T12:09:51.598Z",
+        "updated_at": "2020-07-25T12:11:48.574Z"
+    }
+}
 
 ///update device 
 API 4-PUT : http://localhost:8800/api/v1/device/edit 
-
-request body:{id,name,device_code,model,status}
+changes can be :{id,name,device_code,model,status}
 request:{
-     "id": 1,
+     "id": 1,//required
      "model": "IFB"
 }
 response:{
