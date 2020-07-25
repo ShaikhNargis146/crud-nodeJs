@@ -62,7 +62,7 @@ class DeviceService {
 		try {
 			const data = {
 				table: 'devices',
-				clause: `id=${param.id}`,
+				clause: `id=${param.id} and isactive=true`,
 			};
 			const response = await db_store.getOne(data);
 			if (response && response.data) return response_handler.success(response.data);
@@ -89,7 +89,8 @@ class DeviceService {
 				columns: columns,
 			};
 			const response = await db_store.update(dataSingle, params);
-			if (response) return response_handler.success(response);
+			console.log("res---",response)
+			if (response && !response.error) return response_handler.success(response);
 			else
 				return response_handler.invalid({
 					message: 'Incorrect Data !',

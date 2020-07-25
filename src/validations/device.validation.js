@@ -34,9 +34,18 @@ module.exports = {
 	//PUT /v1/device/edit
 	edit_device: {
 		body: {
+			id: Joi.number().required(),
 			name: Joi.string().optional(),
 			device_code: Joi.string().optional(),
 			model: Joi.string().optional(),
+		},
+		query: {},
+		param: {},
+	},
+	action_device: {
+		body: {
+			id: Joi.number().required(),
+			status: Joi.string().required()
 		},
 		query: {},
 		param: {},
