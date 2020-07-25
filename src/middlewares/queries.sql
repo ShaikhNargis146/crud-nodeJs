@@ -1,6 +1,5 @@
-DROP DATABASE IF EXISTS myDevice;
-CREATE DATABASE myDevice;
-\c myDevice;
+DROP DATABASE IF EXISTS devicedb;
+CREATE DATABASE devicedb;
 
 CREATE TABLE devices
 (
