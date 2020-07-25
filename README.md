@@ -1,4 +1,5 @@
 to start-  npm start
+
 //get all devices
 API 1-GET : http://localhost:8800/api/v1/device/all
 
