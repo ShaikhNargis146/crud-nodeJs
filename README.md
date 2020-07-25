@@ -22,6 +22,7 @@ response:{
         "total_count": "1"
     }
 }
+
 //get one device
 API 2-GET : http://localhost:8800/api/v1/device/get/{id}
 
@@ -46,6 +47,7 @@ API 3-POST : http://localhost:8800/api/v1/device/edit
 
 request body:{name:"AC",device_code:"AC001",model:"IFB"}
 request:
+
 ///update device 
 API 4-PUT : http://localhost:8800/api/v1/device/edit 
 
