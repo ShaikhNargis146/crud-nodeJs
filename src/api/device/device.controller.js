@@ -1,5 +1,6 @@
 const httpStatus = require('http-status');
 const DeviceService = require('./device.service');
+const logger = require('../../utils/logger')(__filename);
 
 const getDevices = async (req, res, next) => {
 	try {
@@ -55,6 +56,21 @@ const updateDevice = async (req, res, next) => {
 		next(err);
 	}
 };
+const actionDevice = async (req, res, next) => {
+	try {
+		req.body.updated_at = new Date();
+		const response = await DeviceService.update_device(req.body);
+		if (response.status == 200) {
+			logger.info("device status changed to ",response.data.status)
+			response.message=`device status changed to ${response.data.status}`
+			return res.status(httpStatus.OK).json(response);
+		} else {
+			return res.status(httpStatus.INTERNAL_SERVER_ERROR).json(response);
+		}
+	} catch (err) {
+		next(err);
+	}
+};
 const deleteDevice = async (req, res, next) => {
 	try {
 		const response = await DeviceService.delete_device(req.body);
@@ -71,5 +87,6 @@ module.exports = {
 	saveDevice,
 	getDeviceById,
 	updateDevice,
+	actionDevice,
 	deleteDevice,
 };
