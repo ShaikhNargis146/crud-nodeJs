@@ -7,7 +7,6 @@ const router = express.Router();
  * GET v1/status
  */
 router.get('/status', (req, res) => {
-	// console.log('inside status');
 	res.json({
 		message: 'OK',
 		timestamp: new Date().toISOString(),
