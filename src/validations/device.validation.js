@@ -5,7 +5,7 @@ module.exports = {
 	save_device: {
 		body: {
 			name: Joi.string().required(),
-			device_id: Joi.string().required(),
+			device_code: Joi.string().required(),
 			model: Joi.string().required(),
 		},
 		query: {},
@@ -35,7 +35,7 @@ module.exports = {
 	edit_device: {
 		body: {
 			name: Joi.string().optional(),
-			device_id: Joi.string().optional(),
+			device_code: Joi.string().optional(),
 			model: Joi.string().optional(),
 		},
 		query: {},
