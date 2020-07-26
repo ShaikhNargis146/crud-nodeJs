@@ -1,4 +1,6 @@
-to start-  npm start
+install required packages and start- npm i and npm start
+
+use SQL file to create db and table
 
 //get all devices
 API 1-GET : http://localhost:8800/api/v1/device/all
